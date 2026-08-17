@@ -1,10 +1,22 @@
+api-version: '1.19'
 main: me.AshenClock.PlayerPositions
 name: PlayerPositions
-version: 1.0
+version: 1.1.0
+description: Inspect online and offline Minecraft player positions.
+author: Antonio Spedito
 commands:
-  PlayerPositions:
-    description: Comando per restituire l'attuale posizione di tutti i Players
+  playerpositions:
+    description: Show your position and the positions of online players.
     usage: /<command>
-  OffPlayers:
-    description: Comando per restituire l'ultima posizione di tutti i Player Offline
+    permission: playerpositions.online
+  offplayers:
+    description: Show the last saved position of offline players.
     usage: /<command>
+    permission: playerpositions.offline
+permissions:
+  playerpositions.online:
+    description: Use /playerpositions.
+    default: true
+  playerpositions.offline:
+    description: Use /offplayers.
+    default: op
